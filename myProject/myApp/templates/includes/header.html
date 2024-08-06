@@ -1,0 +1,29 @@
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+
+<header>
+    <nav id="nav">
+        <ul id="nav-list">
+            <li class="nav-item">
+                <a href="{% url 'index' %}">
+                    <img id="logo" src="{% static 'assets/img/logo.png' %}" alt="GameSphere Logo">
+                </a>
+            </li>
+            <li class="nav-item gamesphere-text">
+                <a href="{% url 'index' %}" alt="GameSphere Logo">GameSphere</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item login">
+                <a href="{% url 'logout' %}" style="text-decoration: none;">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item login">
+                <a href="{% url 'login' %}" style="text-decoration: none;">Login/Register</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>

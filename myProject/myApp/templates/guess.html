@@ -1,0 +1,49 @@
+{% load static %}
+
+<head>
+    <title>Guess The Number</title>
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+<body>
+    {% include 'includes/header.html' %}
+
+    <section class="guess_page">
+        <div class="container guess_box">
+            <form method="POST" action="{% url 'guess' %}">
+                {% csrf_token %}
+                {% if user.is_authenticated %}
+                    <h1>Welcome {{ user.username }}</h1><br>
+                {% endif %}
+                
+                <div class="row">
+                    <div class="column">
+                        <h2>Enter lower range<span>*</span></h2>
+                        <input type="number" name="lower_range" placeholder="Lower range" min="1" required />
+                    </div>
+                    <div class="column">
+                        <h2>Enter upper range<span>*</span></h2>
+                        <input type="number" name="upper_range" placeholder="Upper range" min="1" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <h2>Enter the number<span>*</span></h2>
+                        <input type="number" name="number" placeholder="Enter the number" min="0" required />
+                    </div>
+                    <div class="column">
+                        <h2>Enter Bet Amount<span>*</span></h2>
+                        <input type="number" name="betamt" placeholder="Bet Amount" min="1" required />
+                    </div>
+                </div>
+                <button type="submit">Bet</button>
+                <div class="messages">
+                    {% for message in messages %}
+                        <h5 class="{{ message.tags }}">{{ message }}</h5>
+                    {% endfor %}
+                </div>
+            </form>
+        </div>
+    </section>
+    {% include 'includes/footer.html' %}
+
+</body>

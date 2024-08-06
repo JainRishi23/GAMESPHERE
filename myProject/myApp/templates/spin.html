@@ -1,0 +1,203 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Spin Game</title>
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+
+<body>
+    {% csrf_token %}
+    <div class="spin_page">
+        {% include 'includes/header.html' %}
+        <div class="container spin">
+
+            <img class="marker" src="{% static 'assets/img/marker.png' %}" alt="marker">
+            <img class="wheel" src="{% static 'assets/img/wheel.png' %}" alt="Wheel">
+            <div class="back"></div>
+            <!-- <div class="spin_button"> -->
+            <button class="button" id="spinButton">Spin</button>
+            <!-- </div> -->
+            <div class="input_a">
+                <input type="number" min="1" id="betAmount" placeholder="Enter bet amount">
+                <input type="number" min="1" max="36" id="betNumber" placeholder="Enter bet number">
+            </div>
+            <div class="result">
+                <h1 id="result"></h1>
+            </div><!-- <p>Points: <span id="points">{{ points }}</span></p> -->
+        </div>
+        <!-- {% include 'includes/footer.html' %} -->
+    </div>
+
+    <footer>
+        {% if user.is_authenticated %}
+        <div class="points-container">
+            <p>Points: <span id="points">{{ points }}</span></p>
+            <img src="{% static 'assets/img/Coin.png' %}" alt="Coin">
+        </div>
+        {% else %}
+        <div class="points-container">
+            <p>Points: N/A</p>
+        </div>
+        {% endif %}
+    </footer>
+    <script>
+        (function () {
+            const wheel = document.querySelector('.wheel');
+            const startButton = document.querySelector('.button');
+            const back = document.querySelector('.back');
+            const betAmountInput = document.getElementById('betAmount');
+            const betNumberInput = document.getElementById('betNumber');
+            const resultElement = document.getElementById('result');
+            const pointsElement = document.getElementById('points');
+            let deg = 0;
+
+            // Create audio object globally
+            const audio = new Audio("/static/assets/sounds/Recording.mp3");
+
+            // Function to clear error messages
+            const clearErrorMessage = () => {
+                resultElement.textContent = '';
+                resultElement.style.color = ''; // Reset the color
+            };
+
+            // Add event listeners to clear error messages when typing
+            betAmountInput.addEventListener('input', clearErrorMessage);
+            betNumberInput.addEventListener('input', clearErrorMessage);
+
+            startButton.addEventListener('click', () => {
+                const betAmount = parseInt(betAmountInput.value, 10);
+                const betNumber = parseInt(betNumberInput.value, 10);
+                const availablePoints = parseInt(pointsElement.textContent, 10);
+
+                // Clear any previous error messages
+                clearErrorMessage();
+
+                if (!betAmount || betAmount <= 0) {
+                    resultElement.textContent = "Please enter a valid bet amount.";
+                    resultElement.style.color = 'red';
+                    return;
+                }
+
+                if (!betNumber || betNumber < 1 || betNumber > 36) {
+                    resultElement.textContent = "Please enter a valid bet number.";
+                    resultElement.style.color = 'red';
+                    return;
+                }
+
+                if (betAmount > availablePoints) {
+                    resultElement.textContent = "You don't have enough points.";
+                    resultElement.style.color = 'red';
+                    return;
+                }
+
+                // Play audio immediately
+                audio.currentTime = 0; // Reset audio to the beginning
+                audio.play().catch(error => {
+                    console.error('Error playing audio:', error);
+                });
+
+                startButton.style.pointerEvents = 'none';
+                deg = Math.floor(5000 + Math.random() * 5000);
+                wheel.style.transition = 'all 14s ease';
+                back.style.transition = 'all 10s ease-out';
+                wheel.style.transform = `rotate(${deg}deg)`;
+                wheel.classList.add('blur');
+                back.classList.add('rainbow');
+            });
+
+            wheel.addEventListener('transitionend', () => {
+                wheel.classList.remove('blur');
+                back.classList.remove('rainbow');
+                startButton.style.pointerEvents = 'auto';
+                wheel.style.transition = 'none';
+                const actualDeg = deg % 360;
+                wheel.style.transform = `rotate(${actualDeg}deg)`;
+
+                let resultNumber = 0;
+
+                if (actualDeg >= 0 && actualDeg < 10) resultNumber = 26;
+                if (actualDeg >= 10 && actualDeg < 20) resultNumber = 3;
+                if (actualDeg >= 20 && actualDeg < 30) resultNumber = 35;
+                if (actualDeg >= 30 && actualDeg < 39) resultNumber = 12;
+                if (actualDeg >= 39 && actualDeg < 49) resultNumber = 28;
+                if (actualDeg >= 49 && actualDeg < 59) resultNumber = 7;
+                if (actualDeg >= 59 && actualDeg < 69) resultNumber = 29;
+                if (actualDeg >= 69 && actualDeg < 78) resultNumber = 18;
+                if (actualDeg >= 78 && actualDeg < 88) resultNumber = 22;
+                if (actualDeg >= 88 && actualDeg < 98) resultNumber = 9;
+                if (actualDeg >= 98 && actualDeg < 107) resultNumber = 31;
+                if (actualDeg >= 107 && actualDeg < 117) resultNumber = 14;
+                if (actualDeg >= 117 && actualDeg < 127) resultNumber = 20;
+                if (actualDeg >= 127 && actualDeg < 137) resultNumber = 1;
+                if (actualDeg >= 137 && actualDeg < 146) resultNumber = 33;
+                if (actualDeg >= 146 && actualDeg < 156) resultNumber = 16;
+                if (actualDeg >= 156 && actualDeg < 166) resultNumber = 24;
+                if (actualDeg >= 166 && actualDeg < 176) resultNumber = 5;
+                if (actualDeg >= 176 && actualDeg < 185) resultNumber = 10;
+                if (actualDeg >= 185 && actualDeg < 195) resultNumber = 23;
+                if (actualDeg >= 195 && actualDeg < 205) resultNumber = 8;
+                if (actualDeg >= 205 && actualDeg < 215) resultNumber = 30;
+                if (actualDeg >= 215 && actualDeg < 224) resultNumber = 11;
+                if (actualDeg >= 224 && actualDeg < 234) resultNumber = 36;
+                if (actualDeg >= 234 && actualDeg < 244) resultNumber = 13;
+                if (actualDeg >= 244 && actualDeg < 253) resultNumber = 21;
+                if (actualDeg >= 253 && actualDeg < 263) resultNumber = 6;
+                if (actualDeg >= 263 && actualDeg < 273) resultNumber = 34;
+                if (actualDeg >= 273 && actualDeg < 283) resultNumber = 17;
+                if (actualDeg >= 283 && actualDeg < 292) resultNumber = 25;
+                if (actualDeg >= 292 && actualDeg < 302) resultNumber = 2;
+                if (actualDeg >= 302 && actualDeg < 312) resultNumber = 21;
+                if (actualDeg >= 312 && actualDeg < 322) resultNumber = 4;
+                if (actualDeg >= 322 && actualDeg < 331) resultNumber = 19;
+                if (actualDeg >= 331 && actualDeg < 341) resultNumber = 15;
+                if (actualDeg >= 341 && actualDeg < 350) resultNumber = 32;
+                if (actualDeg >= 350 && actualDeg < 360) resultNumber = 0;
+
+                const betNumber = parseInt(betNumberInput.value, 10);
+                const betAmount = parseInt(betAmountInput.value, 10);
+                let win = false;
+
+                if (resultNumber === betNumber) {
+                    resultElement.textContent = `The number was ${resultNumber}`;
+                    resultElement.style.color = 'green';
+                    win = true;
+                } else {
+                    resultElement.textContent = `The number was ${resultNumber}`;
+                    resultElement.style.color = 'red';
+                }
+
+                fetch('/update_points/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+                    },
+                    body: JSON.stringify({ win: win, betAmount: betAmount })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        pointsElement.textContent = data.points;
+                        resultElement.textContent += ` ${data.message}`;
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with the fetch operation:', error);
+                    });
+
+                // Stop the audio when the spin ends
+                audio.pause();
+                audio.currentTime = 0;
+
+                betAmountInput.value = '';
+                betNumberInput.value = '';
+            });
+        })();
+
+
+    </script>
+    <!-- <script src="{% static 'assets/js/script.js' %}"></script> -->
+</body>
+
+</html>

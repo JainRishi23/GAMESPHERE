@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven Slot Game</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+
+<body>
+
+    {% include 'includes/header.html' %}
+    <div class="seven_page">
+        <div class="container">
+            <section id="status">WELCOME!
+                {% if user.is_authenticated %}
+                {{ user.username }}
+                {% endif %}
+            </section>
+            <main>
+                <section id="Slots">
+                    <div id="slot1" class="a1"></div>
+                    <div id="slot2" class="a1"></div>
+                    <div id="slot3" class="a1"></div>
+                </section>
+                <section onclick="doSlot()" id="Gira">TAKE A SPIN!</section>
+                {% if user.is_authenticated %}
+                <div id="betAmountContainer">
+                    <input type="number" id="betAmount" placeholder="Enter Bet Amount: " min="1">
+                </div>
+                {% endif %}
+            </main>
+        </div>
+    </div>
+    <div class="messages">
+        {% csrf_token %}
+        {% for message in messages %}
+        <h5>{{ message }}</h5>
+        {% endfor %}
+        {% if user.is_authenticated %}
+        <h1>Welcome {{ user.username }}</h1>
+        <p>Total Points: <span id="points">{{ points }}</span></p>
+        {% endif %}
+    </div>
+    <footer>
+        {% if user.is_authenticated %}
+        <div class="points-container">
+            <p>Points: {{ points }}</p>
+            <img src="{% static 'assets/img/Coin.png' %}" alt="Coin">
+        </div>
+        {% else %}
+        <div class="points-container">
+            <p>Points: N/A</p>
+        </div>
+        {% endif %}
+    </footer>
+    <!-- {% include 'includes/footer.html' %} -->
+
+    <script>
+        let pointsElement = document.getElementById("points");
+        let status = document.getElementById("status");
+        let csrfToken = document.querySelector("[name=csrfmiddlewaretoken]").value;
+        let betAmountInput = document.getElementById("betAmount");
+
+        var doing = false;
+        var spin = [
+            new Audio("/static/assets/sounds/spin.mp3"),
+            new Audio("/static/assets/sounds/spin.mp3"),
+            new Audio("/static/assets/sounds/spin.mp3"),
+            new Audio("/static/assets/sounds/spin.mp3"),
+            new Audio("/static/assets/sounds/spin.mp3"),
+            new Audio("/static/assets/sounds/spin.mp3"),
+            new Audio("/static/assets/sounds/spin.mp3")
+        ];
+        var coin = [
+            new Audio("/static/assets/sounds/coin.mp3"),
+            new Audio("/static/assets/sounds/coin.mp3"),
+            new Audio("/static/assets/sounds/coin.mp3")
+        ];
+        var winAudio = new Audio("/static/assets/sounds/win.mp3");
+        var loseAudio = new Audio("/static/assets/sounds/lose.mp3");
+
+        function doSlot() {
+            let betAmount = parseInt(betAmountInput.value);
+            if (doing) return;
+            if (isNaN(betAmount) || betAmount < 1) {
+                status.innerHTML = "Enter a valid bet amount.";
+                return;
+            }
+            let currentPoints = parseInt(pointsElement.textContent);
+            if (betAmount > currentPoints) {
+                status.innerHTML = "Bet amount exceeds";
+                return;
+            }
+
+            doing = true;
+            var numChanges = randomInt(1, 4) * 7;
+            var numberSlot1 = numChanges + randomInt(1, 7);
+            var numberSlot2 = numChanges + 2 * 7 + randomInt(1, 7);
+            var numberSlot3 = numChanges + 4 * 7 + randomInt(1, 7);
+
+            var i1 = 0;
+            var i2 = 0;
+            var i3 = 0;
+            var sound = 0;
+            status.innerHTML = "SPINNING";
+            slot1 = setInterval(spin1, 50);
+            slot2 = setInterval(spin2, 50);
+            slot3 = setInterval(spin3, 50);
+
+            function spin1() {
+                i1++;
+                if (i1 >= numberSlot1) {
+                    coin[0].play();
+                    clearInterval(slot1);
+                    return null;
+                }
+                slotTile = document.getElementById("slot1");
+                if (slotTile.className == "a7") {
+                    slotTile.className = "a0";
+                }
+                slotTile.className = "a" + (parseInt(slotTile.className.substring(1)) + 1);
+            }
+
+            function spin2() {
+                i2++;
+                if (i2 >= numberSlot2) {
+                    coin[1].play();
+                    clearInterval(slot2);
+                    return null;
+                }
+                slotTile = document.getElementById("slot2");
+                if (slotTile.className == "a7") {
+                    slotTile.className = "a0";
+                }
+                slotTile.className = "a" + (parseInt(slotTile.className.substring(1)) + 1);
+            }
+
+            function spin3() {
+                i3++;
+                if (i3 >= numberSlot3) {
+                    coin[2].play();
+                    clearInterval(slot3);
+                    testWin(betAmount);
+                    return null;
+                }
+                slotTile = document.getElementById("slot3");
+                if (slotTile.className == "a7") {
+                    slotTile.className = "a0";
+                }
+                sound++;
+                if (sound == spin.length) {
+                    sound = 0;
+                }
+                spin[sound].play();
+                slotTile.className = "a" + (parseInt(slotTile.className.substring(1)) + 1);
+            }
+        }
+
+        function testWin(betAmount) {
+            var slot1 = document.getElementById("slot1").className;
+            var slot2 = document.getElementById("slot2").className;
+            var slot3 = document.getElementById("slot3").className;
+
+            let win = ((slot1 == slot2 && slot2 == slot3) ||
+                (slot1 == slot2 && slot3 == "a7") ||
+                (slot1 == slot3 && slot2 == "a7") ||
+                (slot2 == slot3 && slot1 == "a7") ||
+                (slot1 == slot2 && slot1 == "a7") ||
+                (slot1 == slot3 && slot1 == "a7") ||
+                (slot2 == slot3 && slot2 == "a7")) && !(slot1 == slot2 && slot2 == slot3 && slot1 == "a7");
+
+            updatePoints(win, betAmount);
+            doing = false;
+        }
+
+        function updatePoints(win, betAmount) {
+            fetch("/update_points/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": csrfToken
+                },
+                body: JSON.stringify({ win: win, betAmount: betAmount })
+            })
+            .then(response => response.json())
+            .then(data => {
+                pointsElement.textContent = data.points;
+                status.innerHTML = data.message;
+                if (win) {
+                    winAudio.play();
+                } else {
+                    loseAudio.play();
+                }
+                // Update the points in the footer
+                let footerPoints = document.querySelector(".points-container p");
+                if (footerPoints) {
+                    footerPoints.textContent = `Points: ${data.points}`;
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        }
+
+        function randomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+    <!-- <script src="{% static 'assets/js/script.js' %}"></script> -->
+</body>
+
+</html>

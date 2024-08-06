@@ -1,0 +1,18 @@
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+
+<footer>
+    {% if user.is_authenticated %}
+    <div class="points-container">
+        <p>Points:  {{ points }}</p>
+        <img src="{% static 'assets/img/Coin.png' %}" alt="Coin">
+    </div>
+    {% else %}
+    <div class="points-container">
+        <p>Points: N/A</p>
+    </div>
+    {% endif %}
+</footer>

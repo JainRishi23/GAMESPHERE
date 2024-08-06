@@ -1,0 +1,1148 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Forum&family=Offside&family=Play:wght@400;700&display=swap');
+
+body {
+  font-family: "Play", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Header style header.html File */
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+#logo {
+  width: 8em;
+  height: auto;
+  vertical-align: middle;
+}
+
+#nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+#nav-list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.nav-item {
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+}
+
+.gamesphere-text a {
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  font-size: 3em;
+}
+
+.login {
+  margin-left: auto;
+  margin-top: -50px;
+  margin-right: 20px;
+}
+
+.login a {
+  background-color: transparent;
+  padding: 13px;
+  border-radius: 10px;
+  font-size: 1em;
+  font-weight: 510;
+  color: #ffffff;
+  border: 1px solid white;
+}
+
+.login a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* End Header style */
+
+/* Home style index.html File */
+
+#home-section {
+  background-image: url("../img/Home_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.356);
+  z-index: 1;
+}
+
+#hero {
+  text-align: center;
+  color: #fff;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+#hero h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+#hero h2 {
+  font-size: xx-large;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  height: 5em;
+  width: 7em;
+  border-radius: 8px;
+  margin: 10px;
+  text-align: center;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.158);
+}
+
+.icon-box:hover {
+  background-color: rgba(0, 0, 0, 0.317);
+  border: 2px solid rgba(255, 255, 255, 0.753);
+}
+
+.icon-box h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.icon-box a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: x-large;
+}
+
+.icon-box a:hover {
+  color: #ffffffe4;
+}
+
+
+/* End Home style  */
+
+/* Footer style Footer.html File */
+
+footer {
+  background: transparent;
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  color: #fff;
+  padding: 10px;
+  text-align: right;
+  font-size: x-large;
+}
+
+footer p {
+  margin: 0;
+}
+
+.points-container {
+  display: inline-flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.points-container img {
+  margin-left: 0;
+  /* No space between text and image */
+  vertical-align: middle;
+  width: 40px;
+  height: auto;
+}
+
+/* End Footer style  */
+
+/* Login style Login.html File */
+
+.login_page {
+  background-image: url("../img/Login_bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.login_page form {
+  margin: 30px 0px 0px 20px;
+}
+
+.login_page h2 {
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+.login_page h2 sup {
+  color: red;
+}
+
+.login_page h2 a {
+  margin-left: 15px;
+  color: #7ed8ffd3;
+  text-decoration: none;
+}
+
+.login_page h2 a:hover {
+  color: #7ed8ff;
+}
+
+.login_page button {
+  margin-top: 7%;
+  margin-left: 35%;
+  padding: 5px 10px;
+  font-size: larger;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  border: 2px solid rgb(17, 65, 83);
+  box-shadow: rgba(28, 170, 202, 0.436) 0px 5px 29px 0px;
+}
+
+.login_page button:hover {
+  border: 2px solid rgb(29, 84, 106);
+  color: rgba(255, 255, 255, 0.815);
+}
+
+.login_page input {
+  background-color: transparent;
+  color: #fff;
+  width: 100%;
+  padding: 5px;
+  font-size: 1em;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+}
+
+.login_page ::placeholder {
+  color: rgba(255, 255, 255, 0.619);
+}
+
+.login_page .messages {
+  text-align: center;
+  color: #ff0000;
+}
+
+/* End Login style */
+
+/* Register style Register.html File */
+
+.register_page {
+  background-image: url("../img/Register_bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.register_page form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 450px;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 20px;
+  margin-top: -50px;
+  border-radius: 10px;
+}
+
+.register_page form h1 {
+  margin-bottom: 20px;
+}
+
+.register_page form .form-group {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.register_page form .form-group label {
+  margin-bottom: 8px;
+  width: 100%;
+  font-size: large;
+}
+
+.register_page sup {
+  color: red;
+}
+
+.register_page form .form-group input {
+  padding: 10px;
+  width: 100%;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.register_page form .form-group input::placeholder {
+  color: #ffffff9c;
+}
+
+.register_page form .form-group .error {
+  color: #ff4d4d;
+  font-size: 0.9em;
+  margin: 8px 0 -8px 0;
+}
+
+.register_page form .name-fields {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.register_page form .name-fields .form-group {
+  width: 46%;
+}
+
+.register_page form button {
+  padding: 8px 15px;
+  border: 2px solid rgb(255, 251, 249);
+  border-radius: 5px;
+  font-size: large;
+  background-color: #ffae002e;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: #fff2d1 0px 4px 20px 0px;
+}
+
+.register_page form button:hover {
+  background-color: #ffae0017;
+  color: #ffffffe7;
+}
+
+/* End Register style */
+
+/* Guess style Guess.html File */
+
+.guess_page {
+  background-image: url("../img/guess_the_number_bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.guess_page form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 360px;
+  background-color: #8d272700;
+}
+
+.guess_page form h1 {
+  margin-bottom: 0px;
+  font-size: 2em;
+}
+
+.guess_page .messages {
+  margin-top: -14px;
+  font-size: 1.3em;
+  font-weight: normal;
+}
+
+.guess_page .messages .win-message {
+  color: rgb(0, 185, 0);
+}
+
+.guess_page .messages .lose-message {
+  color: red;
+}
+
+.guess_page .messages .error-message {
+  color: red;
+}
+
+.guess_page form h2 {
+  font-size: 1.2em;
+  font-weight: normal;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: left;
+}
+
+.guess_page form h2 span {
+  color: red;
+}
+
+.guess_page form .column {
+  margin-left: 40px;
+}
+
+.guess_page form input {
+  background-color: transparent;
+  color: #fff;
+  width: 80%;
+  padding: 5px;
+  font-size: 1em;
+  border: 2px solid rgba(255, 255, 255, 0.728);
+  border-radius: 5px;
+}
+
+.guess_page ::placeholder {
+  color: rgba(255, 255, 255, 0.619);
+}
+
+.guess_page form button {
+  padding: 8px 24px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  border: 2px solid rgba(39, 67, 78, 0.349);
+  box-shadow: rgba(28, 170, 202, 0.295) 0px 5px 20px 0px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.guess_page form button:hover {
+  box-shadow: rgba(28, 170, 202, 0.491) 0px 5px 20px 0px;
+  color: rgba(255, 255, 255, 0.815);
+}
+
+.guess_page button.home-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgb(17, 65, 83);
+  border: none;
+  cursor: pointer;
+}
+
+.guess_page button.home-button:hover {
+  background-color: rgb(29, 84, 106);
+}
+
+/* End guess style */
+
+/* Seven style seven.html File */
+
+.seven_page {
+  background-image: url("../img/seven_bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  position: relative;
+}
+
+.seven_page .messages {
+  text-align: center;
+  opacity: 0;
+  color: transparent;
+  background-color: transparent;
+  height: 0;
+}
+
+.seven_page .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff00;
+  margin-top: 120px;
+  height: 52vh;
+  position: relative;
+}
+
+.seven_page section#status {
+  padding: 15px 15px;
+  border-radius: 5px;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 1.3em;
+  font-weight: 800;
+  margin-top: -15px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.seven_page section#Slots {
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  width: 300px;
+  margin: 45px 2px 2px 2px;
+}
+
+.seven_page section#Gira {
+  padding: 15px 25px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgba(25, 35, 46, 0.911);
+  color: #ffffffce;
+  font-size: 25px;
+  font-weight: 800;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.seven_page section#Gira:hover {
+  color: #fffffff1;
+  background-color: rgb(25, 35, 46);
+}
+
+.seven_page section#options {
+  margin-top: 20px;
+  padding-top: 5px;
+  border-radius: 5px;
+  background-color: #C62828;
+  color: #FFFFFF;
+}
+
+.seven_page .option {
+  padding-left: 5px;
+}
+
+.seven_page section#info {
+  background-color: #616161;
+  padding-left: 12px;
+  padding-bottom: 12px;
+  border-radius: 5px;
+  overflow: hidden;
+  animation-duration: 1s;
+  color: #BDBDBD;
+  margin-top: 50px;
+  margin-left: 30%;
+  margin-right: 30%;
+  display: none;
+}
+
+.seven_page #slot1,
+.seven_page #slot2,
+.seven_page #slot3 {
+  display: inline-block;
+  background-size: 90px 150px;
+  width: 90px;
+  height: 150px;
+  border-radius: 2px;
+}
+
+.seven_page #slot2 {
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.seven_page .a1 {
+  background-image: url("../img/seven/seven.png");
+}
+
+.seven_page .a2 {
+  background-image: url("../img/seven/club.png");
+}
+
+.seven_page .a3 {
+  background-image: url("../img/seven/diamond.png");
+}
+
+.seven_page .a4 {
+  background-image: url("../img/seven/heart.png");
+}
+
+.seven_page .a5 {
+  background-image: url("../img/seven/joker.png");
+
+}
+
+.seven_page .a6 {
+  background-image: url("../img/seven/cherry.png");
+}
+
+.seven_page .a7 {
+  background-image: url("../img/seven/spade.png");
+}
+
+.seven_page .slot-machine {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.seven_page .reel {
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.seven_page .controls {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+#betAmountContainer {
+  margin-top: 25px;
+  text-align: center;
+}
+
+#betAmountContainer label {
+  color: #fff;
+}
+
+#betAmountContainer ::placeholder {
+  color: #ffffffd7;
+}
+
+#betAmountContainer input {
+  background-color: transparent;
+  border: 3px solid rgb(101, 105, 108);
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: larger;
+  margin-top: 8px;
+}
+
+/* End Seven style */
+
+/* Spin style Spin.html File */
+
+.spin_page {
+  background-image: url("../img/spin_bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.spin_page .spin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 180px;
+}
+
+.spin_page .wheel {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin-bottom: 70px;
+  border-radius: 50%;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.spin_page .marker {
+  position: absolute;
+  display: flex;
+  width: 70px;
+  margin-top: -35px;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.spin_page .wheel_img {
+  width: 100%;
+  height: 100%;
+  border: 5px solid red;
+}
+
+.spin_page .button {
+  display: block;
+  width: 130px;
+  cursor: pointer;
+  font-size: x-large;
+  font-weight: 700;
+  color: #e8d082;
+  background-color: transparent;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.spin_page .button:hover {
+  opacity: 0.8;
+}
+
+.input_a {
+  margin-top: 5px;
+  display: flex;
+}
+
+.spin_page input[type="number"] {
+  width: 80%;
+  padding: 5px;
+  font-size: 17px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.395);
+  border-radius: 20px;
+}
+
+.spin_page ::placeholder {
+  font-size: 14px;
+  color: rgba(245, 245, 245, 0.874);
+}
+
+.spin_page .result,
+.spin_page .message,
+.spin_page .points {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+}
+
+.spin_page .result {
+  text-align: center;
+  justify-content: center;
+  margin-left: -320px;
+}
+
+.spin_page #result {
+  color: white;
+  font-size: large;
+  margin-top: 20px;
+  position: fixed;
+}
+
+.spin_page .black {
+  color: black;
+}
+
+.spin_page .red {
+  color: red;
+}
+
+.spin_page .green {
+  color: green;
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(0.5px);
+  }
+
+  50% {
+    filter: blur(2px);
+  }
+
+  80% {
+    filter: blur(1.5px);
+  }
+
+  95% {
+    filter: blur(0px);
+  }
+}
+
+/* End Spin style */
+
+/* Roulette style Roulette.html File */
+
+.roulette_page {
+  background-image: url("../img/roulette_bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.roulette_page .roulette-img-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 0, 0, 0);
+  border-radius: 10px;
+  width: 70vh;
+  height: auto;
+}
+
+.roulette_page .roulette-table-img {
+  width: 100vh;
+  border-radius: 10px;
+  background-color: #4caf4f00;
+
+}
+
+.roulette_page .roulette-table-img img {
+  width: 100%;
+}
+
+.roulette_page h1,
+.roulette_page h3,
+.roulette_page h5,
+.roulette_page p {
+  text-align: center;
+}
+
+.roulette_page .bet-buttons-columns {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  background-color: #1b719600;
+  position: absolute;
+  padding: 0;
+  left: 63.6%;
+  top: 31.3%;
+  height: 15.4vh;
+  width: 43px;
+  font-weight: normal;
+}
+
+.roulette_page .bet-buttons-columns button {
+  margin: 0;
+  padding: 5px;
+  height: 100%;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 16px;
+  color: white;
+  transform: rotate(180deg);
+  writing-mode: vertical-lr;
+  border: 2px solid rgba(255, 255, 255, 0);
+  background-color: #00000000;
+}
+
+.roulette_page .bet-buttons-box {
+  display: inline-block;
+  width: 48vh;
+  height: 22vh;
+  position: absolute;
+  top: 46.5%;
+  margin: 0;
+  padding: 0;
+  margin-left: 22px;
+  background-color: #f6030300;
+}
+
+.roulette_page .bet-buttons-dozen {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 5vh;
+  margin: 0;
+  padding: 0;
+  color: transparent;
+}
+
+.roulette_page .bet-buttons-dozen button {
+  margin: 0;
+  padding: 5px;
+  height: 100%;
+  cursor: pointer;
+  width: 16vh;
+  font-weight: bolder;
+  font-size: larger;
+  color: white;
+  border: 3px solid rgba(255, 255, 255, 0);
+  background-color: #44a2cd00;
+}
+
+.roulette_page .bet-buttons-low-even-red-black-odd-high {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 5vh;
+  margin: 0;
+  padding: 0;
+  color: transparent;
+}
+
+.roulette_page .bet-buttons-low-even-red-black-odd-high button {
+  margin: 0;
+  padding: 5px;
+  cursor: pointer;
+  width: 8vh;
+  font-weight: bolder;
+  font-size: larger;
+  color: white;
+  border: 3px solid rgba(255, 255, 255, 0);
+  background-color: #00000000;
+}
+
+.roulette_page .bet-buttons-single-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 6vh;
+  margin: 0;
+  padding: 0;
+  margin-left: -8vh;
+  color: transparent;
+}
+
+.roulette_page .bet-buttons-single-row button {
+  margin: 0;
+  padding: 5px;
+  cursor: pointer;
+  width: 8vh;
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  border: 3px solid rgba(255, 255, 255, 0);
+  background-color: #00000000;
+}
+
+.roulette_page .bet-buttons-single-row .popup-input-button input {
+  position: absolute;
+  width: 7vh;
+  height: 5vh;
+  color: white;
+  font-size: medium;
+  border: none;
+  outline: none;
+  text-align: center;
+  background-color: #00000000;
+}
+
+.roulette_page .bet-buttons-single-row .popup-input-button input::placeholder {
+  color: white;
+  font-size: 9px;
+}
+
+.roulette_page .bet-buttons-bet-button {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 5vh;
+  margin: 0;
+  padding: 0;
+  color: transparent;
+}
+
+.roulette_page .bet-buttons-bet-button button {
+  margin: 0;
+  cursor: pointer;
+  width: 15.9vh;
+  color: white;
+  border-radius: 5px;
+
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  border: 2px solid rgb(255, 255, 255);
+  background-color: #00000000;
+}
+
+.roulette_page .bet-buttons-bet-button input {
+  width: 15.5vh;
+  height: 5vh;
+  outline: none;
+  color: white;
+  text-align: center;
+  border: none;
+  font-size: medium;
+  background-color: #00000000;
+}
+
+
+.roulette_page .bet-buttons-bet-button input::placeholder {
+  color: white;
+  text-align: center;
+}
+
+.roulette_page .bet-buttons-bet-button #place-bet-button {
+  background-color: #ffae00f2;
+}
+
+.roulette_page .bet-buttons-bet-button #place-bet-button:hover {
+  background-color: #ffae00d4;
+}
+
+.roulette_page .bet-buttons-bet-button #reset-button {
+  background-color: #dd2121d7;
+}
+
+.roulette_page .bet-buttons-bet-button #reset-button:hover {
+  background-color: #dd2121b6;
+}
+
+.roulette_page .bet-buttons-columns button:hover,
+.roulette_page .bet-buttons-low-even-red-black-odd-high button:hover,
+.roulette_page .bet-buttons-single-row button:hover,
+.roulette_page .bet-buttons-bet-button button:hover,
+.roulette_page .bet-buttons-dozen button:hover {
+  background-color: rgba(255, 255, 255, 0.192);
+}
+
+.roulette_page button.active {
+  background-color: rgba(255, 255, 255, 0.662);
+  color: rgb(34, 115, 96);
+  border-color: 1px solid white;
+}
+
+.roulette_page button.active:hover {
+  background-color: rgba(254, 255, 208, 0.683);
+}
+
+.roulette_page .bet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffffbd;
+}
+
+.roulette_page .result {
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+  background-color: #e8d082a6;
+}
+
+.roulette_page h1,
+.roulette_page h2 {
+  margin: 0;
+  font-size: x-large;
+  padding: 10px;
+}
+
+.roulette_page .message {
+  position: absolute;
+  top: 14.3vh;
+  border-radius: 10px;
+  background-color: rgba(2, 23, 35, 0.603);
+}
+
+.roulette_page #messages {
+  position: absolute;
+  bottom: 15vh;
+  font-size: x-large;
+  background-color: rgba(39, 49, 55, 0.368);
+}
+
+.roulette_page #result {
+  position: absolute;
+  bottom: 20vh;
+  font-size: larger;
+  font-weight: bolder;
+  background-color: rgba(39, 49, 55, 0.4);
+}
+
+.roulette_page .number-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.roulette_page .number {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  border: 1px solid #000;
+}
+
+.roulette_page .red {
+  background-color: red;
+  color: white;
+}
+
+.roulette_page .black {
+  background-color: black;
+  color: white;
+}
+
+.roulette_page .highlight {
+  border: 2px solid yellow;
+}
+
+
+/* End Roulette style */
+
+@media (max-width: 1024px) {
+  body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  header,
+  footer,
+  #home-section,
+  .login_page,
+  .register_page {
+    display: none;
+  }
+
+  .small-screen-message {
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 20px;
+  }
+}

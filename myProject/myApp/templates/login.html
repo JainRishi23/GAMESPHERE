@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Remove error messages when the user starts to type
+            const inputs = document.querySelectorAll("input");
+            inputs.forEach(input => {
+                input.addEventListener("input", function() {
+                    const errorElement = this.nextElementSibling;
+                    if (errorElement && errorElement.classList.contains("error")) {
+                        errorElement.remove();
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    {% include 'includes/header.html' %}
+
+    <div class="container login_page">
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="column">
+                <h2>Enter your Username<sup>*</sup></h2>
+                <input type="text" name="username" placeholder="Enter here" required />
+            </div>
+            <div class="column">
+                <h2>Enter your Password<sup>*</sup></h2>
+                <input type="password" name="password" placeholder="Password" required />
+            </div>
+            <button type="submit">Submit</button>
+            <div class="messages">
+                {% for message in messages %}
+                    <h5>{{ message }}</h5>
+                {% endfor %}
+            </div>
+            <h2>New User? <a href="{% url 'register' %}">Sign up</a></h2>
+        </form>
+    </div>
+
+    {% include 'includes/footer.html' %}
+</body>
+</html>
