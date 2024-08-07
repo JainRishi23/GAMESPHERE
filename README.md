@@ -47,7 +47,7 @@ Check out the live project [here](https://rishi2305.pythonanywhere.com/).
 ## Project Partners
 
 - **[Rishi Jain](https://github.com/JainRishi23)**
-- **Rishabh Jain(https://github.com/jainrishabh23)**
+- **[Rishabh Jain](https://github.com/jainrishabh23)**
 
 ## Screenshots
 
