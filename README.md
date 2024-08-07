@@ -1,7 +1,3 @@
-Sure! Here's the updated README file with the corrected video link and other details intact:
-
----
-
 # Django Web Project: Casino Games
 
 <img src="myProject/myApp/static/assets/img/logo.png" alt="Project Logo" width="200"/>
@@ -13,7 +9,7 @@ This Django web project includes four exciting casino games:
 1. **Fortune Wheel**
 2. **Roulette**
 3. **Lucky Digits**
-4. **Seven/Slot Machine Game**
+4. **Seven Game**
 
 Users can register and log in to play these games. Each user starts with 1000 predefined points, which are updated in real-time as they play the games.
 
@@ -46,7 +42,7 @@ Users can register and log in to play these games. Each user starts with 1000 pr
 
 ## Live Demo
 
-Check out the live project [here](https://rishi2305.pythonanywhere.com/).
+[Check out the live project](https://rishi2305.pythonanywhere.com/).
 
 ## Project Partners
 
