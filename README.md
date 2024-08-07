@@ -51,16 +51,22 @@ Check out the live project [here](https://rishi2305.pythonanywhere.com/).
 
 ## Screenshots
 
-![Registration Page](screenshots/Screenshot-1.png)
-![Login Page](img/login-page.png)
-![Fortune Wheel Game](img/fortune-wheel.png)
-![Roulette Game](img/roulette.png)
-![Lucky Digits Game](img/lucky-digits.png)
-![Seven/Slot Machine Game](img/slot-machine.png)
+![Home Page](screenshots/Screenshot-1.png)
+![Login Page](screenshots/Screenshot-2.png)
+![Registration Page](screenshots/Screenshot-3.png)
+![Home Page after login](screenshots/Screenshot-4.png)
+![Fortune Wheel Game](screenshots/Screenshot-5.png)
+![Fortune Wheel Game Result](screenshots/Screenshot-6.png)
+![Roulette Game](screenshots/Screenshot-7.png)
+![Roulette Game Result](screenshots/Screenshot-8.png)
+![Lucky Digits Game](screenshots/Screenshot-9.png)
+![Lucky Digits Game Result](screenshots/Screenshot-10.png)
+![Seven/Slot Machine Game](screenshots/Screenshot-11.png)
+![Seven/Slot Machine Game Result](screenshots/Screenshot-12.png)
 
 ## Video Demo
 
-[Watch the project demo](https://your-video-link-here.com)
+[Watch the project demo](screenshots/Screenshot-8.png)
 
 ## Installation and Setup
 
