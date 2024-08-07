@@ -1,6 +1,6 @@
 # Django Web Project: GAMESPHERE
 
-![Project Logo](https://your-image-link-here.com)
+![Project Logo](myProject/myApp/static/assets/img/logo.png)
 
 ## Overview
 
