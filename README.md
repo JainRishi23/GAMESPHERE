@@ -51,9 +51,13 @@ Check out the live project [here](https://rishi2305.pythonanywhere.com/).
 
 ## Screenshots
 
+## Home Page
 ![Home Page](screenshots/Screenshot-1.png)
+## Login Page
 ![Login Page](screenshots/Screenshot-2.png)
+## Registration Page
 ![Registration Page](screenshots/Screenshot-3.png)
+## Home Page after login
 ![Home Page after login](screenshots/Screenshot-4.png)
 ![Fortune Wheel Game](screenshots/Screenshot-5.png)
 ![Fortune Wheel Game Result](screenshots/Screenshot-6.png)
