@@ -42,7 +42,7 @@ Users can register and log in to play these games. Each user starts with 1000 pr
 
 ## Live Demo
 
-[Check out the live project](https://rishi2305.pythonanywhere.com/).
+[Check out the live project](https://rishi2305.pythonanywhere.com/)
 
 ## Project Partners
 
