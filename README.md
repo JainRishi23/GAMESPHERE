@@ -1,10 +1,6 @@
-Sure, here's the updated README file with a smaller logo image:
-
----
-
 # Django Web Project: Casino Games
 
-<img src="https://rishi2305.pythonanywhere.com/static/assets/img/logo.png" alt="Project Logo" width="200"/>
+<img src="myProject/myApp/static/assets/img/logo.png" alt="Project Logo" width="200"/>
 
 ## Overview
 
@@ -232,7 +228,3 @@ Now you can access the project at `http://127.0.0.1:8000/`.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-This README file provides a comprehensive guide for setting up and deploying the Django web project with the included casino games. Make sure to replace placeholder URLs and paths with actual ones specific to your project.
