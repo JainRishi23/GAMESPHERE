@@ -1,4 +1,4 @@
-# Django Web Project: Casino Games
+# Django Web Project: GAMESPHERE
 
 <img src="myProject/myApp/static/assets/img/logo.png" alt="Project Logo" width="200"/>
 
