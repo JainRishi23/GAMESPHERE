@@ -51,7 +51,7 @@ Check out the live project [here](https://rishi2305.pythonanywhere.com/).
 
 ## Screenshots
 
-![Registration Page](screenshots/Screenshot 1.png)
+![Registration Page]('screenshots/Screenshot 1.png')
 ![Login Page](img/login-page.png)
 ![Fortune Wheel Game](img/fortune-wheel.png)
 ![Roulette Game](img/roulette.png)
