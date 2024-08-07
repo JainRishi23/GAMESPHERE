@@ -9,7 +9,7 @@ This Django web project includes four exciting casino games:
 1. **Fortune Wheel**
 2. **Roulette**
 3. **Lucky Digits**
-4. **Seven Game**
+4. **Seven/Slot Machine Game**
 
 Users can register and log in to play these games. Each user starts with 1000 predefined points, which are updated in real-time as they play the games.
 
@@ -42,12 +42,12 @@ Users can register and log in to play these games. Each user starts with 1000 pr
 
 ## Live Demo
 
-[Check out the live project](https://rishi2305.pythonanywhere.com/)
+Check out the live project [here](https://rishi2305.pythonanywhere.com/).
 
 ## Project Partners
 
-- **Rishi Jain**
-- **Rishabh Jain**
+- **[Rishi Jain](https://github.com/JainRishi23)**
+- **Rishabh Jain(https://github.com/jainrishabh23)**
 
 ## Screenshots
 
