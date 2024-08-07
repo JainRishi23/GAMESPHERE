@@ -66,7 +66,7 @@ Check out the live project [here](https://rishi2305.pythonanywhere.com/).
 
 ## Video Demo
 
-[Watch the project demo](screenshots/Screenshot-8.png)
+[Watch the project demo](screenshots/Screen-Recording.mp4)
 
 ## Installation and Setup
 
