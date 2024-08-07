@@ -59,14 +59,22 @@ Check out the live project [here](https://rishi2305.pythonanywhere.com/).
 ![Registration Page](screenshots/Screenshot-3.png)
 ## Home Page after login
 ![Home Page after login](screenshots/Screenshot-4.png)
+## Fortune Wheel Game
 ![Fortune Wheel Game](screenshots/Screenshot-5.png)
+## Fortune Wheel Game Result 
 ![Fortune Wheel Game Result](screenshots/Screenshot-6.png)
+## Roulette Game 
 ![Roulette Game](screenshots/Screenshot-7.png)
+## Roulette Game Result 
 ![Roulette Game Result](screenshots/Screenshot-8.png)
+## Lucky Digits Game 
 ![Lucky Digits Game](screenshots/Screenshot-9.png)
+## Lucky Digits Game Result 
 ![Lucky Digits Game Result](screenshots/Screenshot-10.png)
-![Seven/Slot Machine Game](screenshots/Screenshot-11.png)
-![Seven/Slot Machine Game Result](screenshots/Screenshot-12.png)
+## Seven Game 
+![Seven Game](screenshots/Screenshot-11.png)
+## Seven Game Result
+![Seven Game Result](screenshots/Screenshot-12.png)
 
 ## Video Demo
 
